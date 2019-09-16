@@ -13,14 +13,14 @@ class CustomFlatButton extends StatelessWidget {
 
   CustomFlatButton(
       {this.title,
-        this.textColor,
-        this.fontSize,
-        this.fontWeight,
-        this.onPressed,
-        this.color,
-        this.splashColor,
-        this.borderColor,
-        this.borderWidth});
+      this.textColor,
+      this.fontSize,
+      this.fontWeight,
+      this.onPressed,
+      this.color,
+      this.splashColor,
+      this.borderColor,
+      this.borderWidth});
 
   @override
   Widget build(BuildContext context) {

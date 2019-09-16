@@ -8,8 +8,11 @@ class ExampleProvider extends InheritedWidget {
   bool updateShouldNotify(InheritedWidget oldWidget) => true;
 
   static ExampleBloc of(BuildContext context) {
-    return (context.inheritFromWidgetOfExactType(ExampleProvider) as ExampleProvider).bloc;
+    return (context.inheritFromWidgetOfExactType(ExampleProvider)
+            as ExampleProvider)
+        .bloc;
   }
 
-  ExampleProvider({Key key, this.bloc, Widget child}) : super(child: child, key: key);
+  ExampleProvider({Key key, this.bloc, Widget child})
+      : super(child: child, key: key);
 }

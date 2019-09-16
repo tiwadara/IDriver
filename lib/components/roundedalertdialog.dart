@@ -71,7 +71,12 @@ class Dialog extends StatelessWidget {
           child: new ConstrainedBox(
             constraints: const BoxConstraints(minWidth: 280.0),
             child: new Material(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0)), side: BorderSide(color: Colors.white, width: 1.0, style: BorderStyle.solid)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  side: BorderSide(
+                      color: Colors.white,
+                      width: 1.0,
+                      style: BorderStyle.solid)),
               elevation: 30.0,
               color: _getColor(context),
               type: MaterialType.card,
@@ -279,7 +284,7 @@ class CustomAlertDialog extends StatelessWidget {
 
     if (label != null)
       dialogChild =
-      new Semantics(namesRoute: true, label: label, child: dialogChild);
+          new Semantics(namesRoute: true, label: label, child: dialogChild);
 
     return new Dialog(child: dialogChild);
   }
@@ -506,9 +511,9 @@ class SimpleDialog extends StatelessWidget {
     if (children != null) {
       body.add(new Flexible(
           child: new SingleChildScrollView(
-            padding: contentPadding,
-            child: new ListBody(children: children),
-          )));
+        padding: contentPadding,
+        child: new ListBody(children: children),
+      )));
     }
 
     Widget dialogChild = new IntrinsicWidth(
@@ -616,13 +621,13 @@ class _DialogRoute<T> extends PopupRoute<T> {
 ///  * <https://material.google.com/components/dialogs.html>
 Future<T> customShowDialog<T>({
   @required
-  BuildContext context,
+      BuildContext context,
   bool barrierDismissible: true,
   @Deprecated(
       'Instead of using the "child" argument, return the child from a closure '
-          'provided to the "builder" argument. This will ensure that the BuildContext '
-          'is appropriate for widgets built in the dialog.')
-  Widget child,
+      'provided to the "builder" argument. This will ensure that the BuildContext '
+      'is appropriate for widgets built in the dialog.')
+      Widget child,
   WidgetBuilder builder,
 }) {
   assert(child == null || builder == null);
@@ -630,7 +635,6 @@ Future<T> customShowDialog<T>({
     child: child ?? new Builder(builder: builder),
     theme: Theme.of(context, shadowThemeOnly: true),
     barrierDismissible: barrierDismissible,
-    barrierLabel:
-    MaterialLocalizations.of(context).modalBarrierDismissLabel,
+    barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
   ));
 }
