@@ -5,6 +5,7 @@ import 'package:instant_driver/theme/text_style.dart';
 ThemeData appTheme() {
   return ThemeData(
       primaryColor: CustomColors.primary,
+      primaryColorLight: CustomColors.primary_light,
       accentColor: Colors.orange,
       hintColor: CustomColors.black,
       dividerColor: Colors.white,

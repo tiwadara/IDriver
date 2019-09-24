@@ -62,4 +62,17 @@ class CustomTextStyle {
       fontFamily: "Roboto-Medium",
       fontStyle: FontStyle.normal,
       fontSize: 13.0);
+  static const boldWhite = const TextStyle(
+      color: Colors.white,
+      fontWeight: FontWeight.w300,
+      fontFamily: "Roboto-Medium",
+      fontStyle: FontStyle.normal,
+      fontSize: 13.0);
+  static const TextStyle navName = const TextStyle(
+    fontFamily: 'Roboto-Regular',
+    color: Color(0xff000000),
+    fontSize: 20,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+  );
 }

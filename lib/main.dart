@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:instant_driver/routes/Routes.dart';
 import 'package:instant_driver/screens/dashboard/dashboard.dart';
 import 'package:instant_driver/screens/onboarding/onboarding.dart';
 import 'package:instant_driver/screens/preferences/preferences.dart';
@@ -9,6 +11,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   SharedPreferences.getInstance().then((prefs) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark
+        .copyWith(statusBarIconBrightness: Brightness.dark));
     runApp(App(prefs: prefs));
   });
 }
@@ -24,11 +28,11 @@ class App extends StatelessWidget {
       title: 'Instant Driver',
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
-        '/onboard': (BuildContext context) => new OnboardingScreen(),
-        '/dashboard': (BuildContext context) => new Dashboard(),
-        '/signup': (BuildContext context) => new SignUp(),
-        '/uploads': (BuildContext context) => new Uploads(),
-        '/prefs': (BuildContext context) => new Preferences()
+        Routes.onboard: (BuildContext context) => new Onboarding(),
+        Routes.dashboard: (BuildContext context) => new Dashboard(),
+        Routes.signup: (BuildContext context) => new SignUp(),
+        Routes.uploads: (BuildContext context) => new Uploads(),
+        Routes.prefs: (BuildContext context) => new Preferences()
       },
       theme: appTheme(),
       home: _handleCurrentScreen(),
@@ -40,7 +44,7 @@ class App extends StatelessWidget {
     if (seen) {
       return new SignUp();
     } else {
-      return new OnboardingScreen(prefs: prefs);
+      return new Onboarding(prefs: prefs);
     }
   }
 }

@@ -23,7 +23,7 @@ class SelectableCard extends StatefulWidget {
 }
 
 class _SelectableCardState extends State<SelectableCard> {
-  bool _value = false;
+  bool _selected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class _SelectableCardState extends State<SelectableCard> {
       splashColor: CustomColors.warm_grey,
       onTap: () {
         setState(() {
-          _value = !_value;
+          _selected = !_selected;
         });
       },
       child: new Card(
@@ -50,7 +50,7 @@ class _SelectableCardState extends State<SelectableCard> {
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(color: CustomColors.primary)),
-                      child: _value
+                      child: !_selected
                           ? Container(
                         height: 12,
                         width: 12,
