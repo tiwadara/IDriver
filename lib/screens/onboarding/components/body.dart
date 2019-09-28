@@ -61,20 +61,6 @@ class _WalkthroughScreenState extends State<Body> {
             ),
             children: _getPages(),
           ),
-        ),
-        Positioned(
-          bottom: 30,
-          left: 40,
-          child: MaterialButton(
-            child: Text("SKIP", textScaleFactor: 1.5),
-          ),
-        ),
-        Positioned(
-          bottom: 30,
-          right: 40,
-          child: MaterialButton(
-            child: Text("NEXT", textScaleFactor: 1.5),
-          ),
         )
       ],
     );
@@ -92,7 +78,7 @@ class _WalkthroughScreenState extends State<Body> {
           children: <Widget>[
             Padding(
                 padding:
-                    const EdgeInsets.only(top: 200.0, right: 40.0, left: 40.0),
+                    const EdgeInsets.only(top: 100.0, right: 40.0, left: 40.0),
                 child: Image(
                   image: AssetImage(widget.pages[2].image),
                 )),
@@ -131,21 +117,20 @@ class _WalkthroughScreenState extends State<Body> {
               padding:
                   const EdgeInsets.only(top: 20.0, right: 15.0, left: 15.0),
               child: CustomFlatButton(
-                title: "GET STARTED",
-                fontSize: 22,
-                fontWeight: FontWeight.w500,
-                textColor: Colors.white,
-                onPressed: () async {
-                  SharedPreferences prefs =
-                      await SharedPreferences.getInstance();
-                  prefs.setBool('seen', true);
-                  Navigator.of(context).pushNamed("/signup");
-                },
-                splashColor: Colors.black12,
-                borderColor: Colors.white,
-                borderWidth: 0,
-                color: Colors.green
-              ),
+                  title: "GET STARTED",
+                  fontSize: 22,
+                  fontWeight: FontWeight.w500,
+                  textColor: Colors.white,
+                  onPressed: () async {
+                    SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+                    prefs.setBool('seen', true);
+                    Navigator.of(context).pushNamed("/signup");
+                  },
+                  splashColor: Colors.black12,
+                  borderColor: Colors.white,
+                  borderWidth: 0,
+                  color: Colors.green),
             ),
           ],
         )));
@@ -159,7 +144,7 @@ Widget slide({Walkthrough page}) {
     child: ListView(
       children: <Widget>[
         Padding(
-            padding: const EdgeInsets.only(top: 200.0, right: 40.0, left: 40.0),
+            padding: const EdgeInsets.only(top: 100.0, right: 40.0, left: 40.0),
             child: Image(
               image: AssetImage(page.image),
             )),

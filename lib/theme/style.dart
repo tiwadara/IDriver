@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:instant_driver/theme/custom_colors.dart';
+import 'package:instant_driver/theme/text_style.dart';
 
 ThemeData appTheme() {
   return ThemeData(
-    primaryColor: Colors.white,
-    accentColor: Colors.orange,
-    hintColor: Colors.white,
-    dividerColor: Colors.white,
-    buttonColor: Colors.white,
-    scaffoldBackgroundColor: Colors.black,
-    canvasColor: Colors.black,
-  );
+      primaryColor: CustomColors.primary,
+      accentColor: Colors.orange,
+      hintColor: CustomColors.black,
+      dividerColor: Colors.white,
+      buttonColor: Colors.white,
+      scaffoldBackgroundColor: Colors.white,
+      canvasColor: CustomColors.primary,
+      textTheme: TextTheme(
+          subtitle: CustomTextStyle.sub_title,
+          title: CustomTextStyle.title
+      ));
 }

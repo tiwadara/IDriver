@@ -6,9 +6,9 @@ class Body extends StatelessWidget {
     return Center(
       child: RaisedButton(
         onPressed: () {
-          Navigator.pushNamed(context, "/signin");
+//          Navigator.pushNamed(context, "/signin");
         },
-        child: Text('Go Forward!'),
+        child: Text('Welcome'),
       ),
     );
   }

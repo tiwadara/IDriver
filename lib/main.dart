@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:instant_driver/screens/example1/examplescreen1.dart';
-import 'package:instant_driver/screens/onboarding/onboardingscreen.dart';
+import 'package:instant_driver/screens/dashboard/dashboard.dart';
+import 'package:instant_driver/screens/onboarding/onboarding.dart';
+import 'package:instant_driver/screens/preferences/preferences.dart';
 import 'package:instant_driver/screens/signup/signup.dart';
+import 'package:instant_driver/screens/uploads/uploads.dart';
+import 'package:instant_driver/theme/style.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -22,13 +25,12 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
         '/onboard': (BuildContext context) => new OnboardingScreen(),
-        '/root': (BuildContext context) => new ExScreen1(),
+        '/dashboard': (BuildContext context) => new Dashboard(),
         '/signup': (BuildContext context) => new SignUp(),
+        '/uploads': (BuildContext context) => new Uploads(),
+        '/prefs': (BuildContext context) => new Preferences()
       },
-      theme: ThemeData(
-        primaryColor: Colors.white,
-        primarySwatch: Colors.grey,
-      ),
+      theme: appTheme(),
       home: _handleCurrentScreen(),
     );
   }
